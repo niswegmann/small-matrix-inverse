@@ -1,8 +1,8 @@
 # About
-**Small-Matrix-Inverse** (*SMI*) is a *portable*, *[SIMD](https://en.wikipedia.org/wiki/SIMD) optimised* library for *[matrix inversion](https://en.wikipedia.org/wiki/Invertible_matrix)* of 2, 3, and 4 order (square) matrices. It is written in pure [C99](https://en.wikipedia.org/wiki/C99) combined with LLVM/SSE/NEON [compiler intrinsics](https://en.wikipedia.org/wiki/Intrinsic_function). The 4x4 routines are based on Intel's "[Streaming SIMD Extensions - Inverse of 4x4 Matrix](ftp://download.intel.com/design/pentiumiii/sml/24504301.pdf)."
+**Small Matrix Inverse** (*SMI*) is a portable, [SIMD](https://en.wikipedia.org/wiki/SIMD) optimised library for [matrix inversion](https://en.wikipedia.org/wiki/Invertible_matrix) of 2, 3, and 4 order (square) matrices. It is written in pure [C99](https://en.wikipedia.org/wiki/C99) combined with LLVM/SSE/NEON [compiler intrinsics](https://en.wikipedia.org/wiki/Intrinsic_function). The 4x4 routines are based on Intel's "[Streaming SIMD Extensions - Inverse of 4x4 Matrix](ftp://download.intel.com/design/pentiumiii/sml/24504301.pdf)."
 
 # Installation
-Simply copy the relevant headers (e.g. "[invert2x2-llvm.h](https://github.com/niswegmann/Small-Matrix-Inverse/invert2x2-llvm.h)" or "[invert4x4-sse.h](https://github.com/niswegmann/Small-Matrix-Inverse/invert4x4-sse.h)") into your project.
+Simply copy the relevant headers (e.g. "[invert2x2-llvm.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert2x2_llvm.h)" or "[invert4x4-sse.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert4x4_sse.h)") into your project.
 
 # Usage
 
