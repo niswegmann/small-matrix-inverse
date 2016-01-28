@@ -1,7 +1,7 @@
 #ifndef invert2x2_llvm_h
 #define invert2x2_llvm_h
 
-static inline void __attribute__((__always_inline__, __nodebug__)) invert2x2(const float * src, float * dst)
+static __attribute__((__always_inline__, __nodebug__)) void invert2x2(const float * src, float * dst)
 {
     typedef __attribute__((__ext_vector_type__(4))) float float4;
 

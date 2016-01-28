@@ -1,7 +1,7 @@
 #ifndef invert4x4_llvm_h
 #define invert4x4_llvm_h
 
-static inline void invert4x4(const float * src, float * dst)
+static __attribute__((__always_inline__, __nodebug__)) void invert4x4(const float * src, float * dst)
 {
     typedef __attribute__((__ext_vector_type__(4))) float float4;
 
@@ -9,7 +9,7 @@ static inline void invert4x4(const float * src, float * dst)
     float4 col0, col1, col2, col3;
     float4 det, tmp1;
 
-    /* Load: */
+    /* Load matrix: */
 
     col0 = ((float4 *) src)[0];
     col1 = ((float4 *) src)[1];
@@ -122,7 +122,7 @@ static inline void invert4x4(const float * src, float * dst)
     col2 = col2 * det;
     col3 = col3 * det;
 
-    /* Store: */
+    /* Store inverted matrix: */
 
     ((float4 *) dst)[0] = col0;
     ((float4 *) dst)[1] = col1;
