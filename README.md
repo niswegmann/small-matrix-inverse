@@ -26,19 +26,19 @@ SMI is straightforward to use. Include the appropriate header and you're good to
 The input matrix must be non-singular and can be in either row-major or column-major order -- it doesn't matter since for all singular matrices **M** *transpose*(*invert*(*transpose*(**M**))) is equal to *invert*(**M**). If
 the input matrix is singular, the result is undefined. For the sake of efficiency remember to align input and output buffers.
 
-# Benchmark
-SMI hasn't been proberly benchmarked yet. However, initial tests indicates a 50% to 100% performance increase over the matrix inverse routines in Apple's new SIMD library (<simd/simd.h>) which targets 2x-, 3x-, and 4x- vectors/matrices.
-
 # Supported Architectures
 The goal is to support all commen architectures for 2x2, 3x3, and 4x4 matrices. LLVM covers both x86, x86-64, and ARMv7, but specialised versions for ARM NEON are planned.
 
 Here's an overview of the currently supported architectures:
 
 |     | LLVM | SSE  | NEON |
-| --- | ---- | ---- | ---- |
+| --: | :--: | :--: | :--: |
 | 2x2 |  ✓   |  -   |  -   |
 | 3x3 |  -   |  -   |  -   |
 | 4x4 |  ✓   |  ✓   |  -   |
+
+# Benchmark
+SMI hasn't been proberly benchmarked yet. However, initial tests indicates a 50% to 100% performance increase over the matrix inverse routines in Apple's new SIMD library which targets 2x-, 3x-, and 4x- vectors/matrices.
 
 # Contributing
 Send any comments, chocolate, and/or suggestions to nis@primal-audio.com.
