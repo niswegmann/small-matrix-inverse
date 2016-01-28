@@ -33,11 +33,12 @@ SMI hasn't been proberly benchmarked yet. However, initial tests indicates a 50%
 The goal is to support all commen architectures for 2x2, 3x3, and 4x4 matrices. LLVM covers both x86, x86-64, and ARMv7, but specialised versions for ARM NEON are planned.
 
 Here's an overview of the currently supported architectures:
-||LLVM|SSE|NEON|
-|-:|:-:|:-:|:-:|
-|2x2|✓|-|-|
-|3x3|-|-|-|
-|4x4|✓|✓|-|
+
+|     | LLVM | SSE  | NEON |
+| --- | ---- | ---- | ---- |
+| 2x2 |  ✓   |  -   |  -   |
+| 3x3 |  -   |  -   |  -   |
+| 4x4 |  ✓   |  ✓   |  -   |
 
 # Contributing
 Send any comments, chocolate, and/or suggestions to nis@primal-audio.com.
