@@ -1,8 +1,16 @@
 # About
 **Small Matrix Inverse** (*SMI*) is a portable, [SIMD](https://en.wikipedia.org/wiki/SIMD) optimised library for [matrix inversion](https://en.wikipedia.org/wiki/Invertible_matrix) of 2, 3, and 4 order (square) matrices. It is written in pure [C99](https://en.wikipedia.org/wiki/C99) combined with LLVM/SSE/NEON [compiler intrinsics](https://en.wikipedia.org/wiki/Intrinsic_function). The 4x4 routines are based on Intel's "[Streaming SIMD Extensions - Inverse of 4x4 Matrix](ftp://download.intel.com/design/pentiumiii/sml/24504301.pdf)."
 
+# Why Another Library
+
+What does SMI bring to the table that the existing open source scientific libraries lack? (E.g. Eigen, NT2, Blitz++.)
+
+  1. Hand-optimised SIMD routines for non-SSE architectures, such as ARM. (SMI targets all LLVM supported architectures.)
+  2. Hand-optimised SIMD routines for 2x2 and 3x3 inversion.
+  3. An easy-to-use, drag-and-drop, no-template-madness-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) structure/syntax.
+
 # Installation
-Simply copy the relevant headers (e.g. "[invert2x2-llvm.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert2x2_llvm.h)" or "[invert4x4-sse.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert4x4_sse.h)") into your project.
+Each matrix operation consists of a single C-function embedded in a header. Simply copy the relevant header (e.g. "[invert2x2-llvm.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert2x2_llvm.h)" or "[invert4x4-sse.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert4x4_sse.h)") into your project.
 
 # Usage
 
@@ -23,7 +31,7 @@ SMI is straightforward to use. Include the appropriate header and you're good to
     invert4x4(M, Minv);
     ...
 
-The input matrix must be non-singular and can be in either row-major or column-major order -- it doesn't matter since for all singular matrices **M** *transpose*(*invert*(*transpose*(**M**))) is equal to *invert*(**M**). If
+Input matrices must be non-singular and can be in either row-major or column-major order -- it doesn't matter since for all singular matrices **M** *transpose*(*invert*(*transpose*(**M**))) is equal to *invert*(**M**). If
 the input matrix is singular, the result is undefined. For the sake of efficiency remember to align input and output buffers.
 
 # Supported Architectures
@@ -31,7 +39,7 @@ The goal is to support all commen architectures for 2x2, 3x3, and 4x4 matrices. 
 
 Here's an overview of the currently supported architectures:
 
-|     | LLVM | SSE  | NEON |
+|     | C    | LLVM | SSE  | NEON |
 | --: | :--: | :--: | :--: |
 | 2x2 |  ✓   |  -   |  -   |
 | 3x3 |  -   |  -   |  -   |
