@@ -39,11 +39,12 @@ The goal is to support all commen architectures for 2x2, 3x3, and 4x4 matrices. 
 
 Here's an overview of the currently supported architectures:
 
-|     | C    | LLVM | SSE  | NEON |
-| --: | :--: | :--: | :--: |
-| 2x2 |  ✓   |  -   |  -   |
-| 3x3 |  -   |  -   |  -   |
-| 4x4 |  ✓   |  ✓   |  -   |
+|     | C     | LLVM  | SSE   | NEON  |
+| --: | :---: | :---: | :---: | :---: |
+| 1x1 |   -   |   -   |   -   |   -   |
+| 2x2 |   ✓   |   ✓   |   -   |   -   |
+| 3x3 |   -   |   -   |   -   |   -   |
+| 4x4 |   ✓   |   ✓   |   ✓   |   -   |
 
 # Benchmark
 SMI hasn't been proberly benchmarked yet. However, initial tests indicates a 50% to 100% performance increase over the matrix inverse routines in Apple's new SIMD library which targets 2x-, 3x-, and 4x- vectors/matrices.
