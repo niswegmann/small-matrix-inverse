@@ -41,7 +41,7 @@ Here's an overview of the currently supported architectures:
 
 |     | C     | LLVM  | SSE   | NEON  |
 | --: | :---: | :---: | :---: | :---: |
-| 1x1 |   -   |   -   |   -   |   -   |
+| 1x1 |   ✓   |   -   |   -   |   -   |
 | 2x2 |   ✓   |   ✓   |   -   |   -   |
 | 3x3 |   -   |   -   |   -   |   -   |
 | 4x4 |   ✓   |   ✓   |   ✓   |   -   |
