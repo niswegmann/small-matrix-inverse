@@ -46,6 +46,8 @@ Here's an overview of the currently supported architectures:
 | 3x3 |   -   |   -   |   -   |   -   |
 | 4x4 |   ✓   |   ✓   |   ✓   |   -   |
 
+For completeness there is also an 1x1 C-version.
+
 # Benchmark
 SMI hasn't been proberly benchmarked yet. However, initial tests indicates a 50% to 100% performance increase over the matrix inverse routines in Apple's new SIMD library which targets 2x-, 3x-, and 4x- vectors/matrices.
 
