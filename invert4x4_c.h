@@ -7,7 +7,7 @@ static inline void invert4x4(const float * src, float * dst)
 
     /* Compute adjoint: */
 
-    dst[ 0] =
+    dst[0] =
         + src[ 5] * src[10] * src[15]
         - src[ 5] * src[11] * src[14]
         - src[ 9] * src[ 6] * src[15]
@@ -15,7 +15,7 @@ static inline void invert4x4(const float * src, float * dst)
         + src[13] * src[ 6] * src[11]
         - src[13] * src[ 7] * src[10];
 
-    dst[ 1] =
+    dst[1] =
         - src[ 1] * src[10] * src[15]
         + src[ 1] * src[11] * src[14]
         + src[ 9] * src[ 2] * src[15]
@@ -23,7 +23,7 @@ static inline void invert4x4(const float * src, float * dst)
         - src[13] * src[ 2] * src[11]
         + src[13] * src[ 3] * src[10];
 
-    dst[ 2] =
+    dst[2] =
         + src[ 1] * src[ 6] * src[15]
         - src[ 1] * src[ 7] * src[14]
         - src[ 5] * src[ 2] * src[15]
@@ -39,7 +39,7 @@ static inline void invert4x4(const float * src, float * dst)
         - src[ 9] * src[ 2] * src[ 7]
         + src[ 9] * src[ 3] * src[ 6];
 
-    dst[ 4] =
+    dst[4] =
         - src[ 4] * src[10] * src[15]
         + src[ 4] * src[11] * src[14]
         + src[ 8] * src[ 6] * src[15]
@@ -47,7 +47,7 @@ static inline void invert4x4(const float * src, float * dst)
         - src[12] * src[ 6] * src[11]
         + src[12] * src[ 7] * src[10];
 
-    dst[ 5] =
+    dst[5] =
         + src[ 0] * src[10] * src[15]
         - src[ 0] * src[11] * src[14]
         - src[ 8] * src[ 2] * src[15]
@@ -55,7 +55,7 @@ static inline void invert4x4(const float * src, float * dst)
         + src[12] * src[ 2] * src[11]
         - src[12] * src[ 3] * src[10];
 
-    dst[ 6] =
+    dst[6] =
         - src[ 0] * src[ 6] * src[15]
         + src[ 0] * src[ 7] * src[14]
         + src[ 4] * src[ 2] * src[15]
@@ -63,7 +63,7 @@ static inline void invert4x4(const float * src, float * dst)
         - src[12] * src[ 2] * src[ 7]
         + src[12] * src[ 3] * src[ 6];
 
-    dst[ 7] =
+    dst[7] =
         + src[ 0] * src[ 6] * src[11]
         - src[ 0] * src[ 7] * src[10]
         - src[ 4] * src[ 2] * src[11]
@@ -71,7 +71,7 @@ static inline void invert4x4(const float * src, float * dst)
         + src[ 8] * src[ 2] * src[ 7]
         - src[ 8] * src[ 3] * src[ 6];
 
-    dst[ 8] =
+    dst[8] =
         + src[ 4] * src[ 9] * src[15]
         - src[ 4] * src[11] * src[13]
         - src[ 8] * src[ 5] * src[15]
@@ -79,7 +79,7 @@ static inline void invert4x4(const float * src, float * dst)
         + src[12] * src[ 5] * src[11]
         - src[12] * src[ 7] * src[ 9];
 
-    dst[ 9] =
+    dst[9] =
         - src[ 0] * src[ 9] * src[15]
         + src[ 0] * src[11] * src[13]
         + src[ 8] * src[ 1] * src[15]
