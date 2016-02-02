@@ -7,7 +7,7 @@ What does SMI bring to the table that the existing open source scientific librar
 
   1. Hand-optimised SIMD routines for non-SSE architectures, such as ARM. (SMI targets all LLVM supported architectures.)
   2. Hand-optimised SIMD routines for 2x2 and 3x3 inversion.
-  3. An easy-to-use, drag-and-drop, no-template-madness-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) structure/syntax.
+  3. An easy-to-use, drag-and-drop, no-template-madness-[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) structure/interface.
 
 # Installation
 Each matrix operation consists of a single C-function embedded in a header. Simply copy the relevant header (e.g. "[invert2x2-llvm.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert2x2_llvm.h)" or "[invert4x4-sse.h](https://github.com/niswegmann/small-matrix-inverse/blob/master/invert4x4_sse.h)") into your project.
@@ -44,7 +44,7 @@ Here's an overview of the currently supported architectures:
 | --: | :---: | :---: | :---: | :---: |
 | 1x1 |   ✓   |   -   |   -   |   -   |
 | 2x2 |   ✓   |   ✓   |   -   |   -   |
-| 3x3 |   -   |   -   |   -   |   -   |
+| 3x3 |   ✓   |   -   |   -   |   -   |
 | 4x4 |   ✓   |   ✓   |   ✓   |   -   |
 
 # Benchmark
