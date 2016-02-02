@@ -16,20 +16,22 @@ Each matrix operation consists of a single C-function embedded in a header. Simp
 
 SMI is straightforward to use. Include the appropriate header and you're good to go:
 
-    #include "invert4x4-llvm.h"
-    ...
-    float M[16] __attribute__((aligned(16))) =
-        {
-            + 1.0f, + 2.0f, - 1.0f, + 3.0f,
-            - 5.0f, + 1.0f, - 4.0f, - 2.0f,
-            - 3.0f, + 8.0f, + 2.0f, - 4.0f,
-            + 7.0f, - 9.0f, - 4.0f, - 6.0f
-        };
-    
-    float Minv[16] __attribute__((aligned(16)));
-    
-    invert4x4(M, Minv);
-    ...
+```c
+#include "invert4x4-llvm.h"
+...
+float M[16] __attribute__((aligned(16))) =
+    {
+        + 1.0f, + 2.0f, - 1.0f, + 3.0f,
+        - 5.0f, + 1.0f, - 4.0f, - 2.0f,
+        - 3.0f, + 8.0f, + 2.0f, - 4.0f,
+        + 7.0f, - 9.0f, - 4.0f, - 6.0f
+    };
+
+float Minv[16] __attribute__((aligned(16)));
+
+invert4x4(M, Minv);
+...
+```
 
 Input matrices must be non-singular and can be in either row-major or column-major order -- it doesn't matter since for all non-singular matrices **M** *transpose*(*invert*(*transpose*(**M**))) is equal to *invert*(**M**). If the input matrix is singular, the result is undefined. For the sake of efficiency remember to align input and output buffers.
 
